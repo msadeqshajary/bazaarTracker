@@ -80,6 +80,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 }else{
                     CameraUpdate update = CameraUpdateFactory.newLatLngZoom(new LatLng(34.6432245,50.880412),14);
                     mMap.moveCamera(update);
+
                 }
             }
 
