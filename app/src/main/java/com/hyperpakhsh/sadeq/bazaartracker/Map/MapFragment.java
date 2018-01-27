@@ -1,5 +1,7 @@
 package com.hyperpakhsh.sadeq.bazaartracker.Map;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -42,7 +44,9 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         //initialize Retrofit
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         args = getArguments();
-        userId = MapsActivity.userId;
+
+        SharedPreferences preferences = getContext().getSharedPreferences("LOGIN", Context.MODE_PRIVATE);
+        userId = preferences.getInt("userId",0);
 
         Log.e("USER IDDDD",userId+" ");
 
@@ -66,10 +70,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
-
-
-
 
         apiInterface.getLocations(userId).enqueue(new Callback<ArrayList<LocationItem>>() {
             @Override
