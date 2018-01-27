@@ -270,6 +270,7 @@ public class AddCustomerFragment extends Fragment implements OnMapReadyCallback 
                             customer.setLocationId(locationId);
                             customer.setPhone(phoneInput.getText().toString());
                             customer.setShop(shop);
+                            customer.setUserId(MapsActivity.userId);
                             customer.setType("current");
                             customer.setRegionId(regionId);
 
@@ -367,6 +368,7 @@ public class AddCustomerFragment extends Fragment implements OnMapReadyCallback 
                 Intent intent = new Intent(getContext(),MapsActivity.class);
                 intent.putExtra("lat",mLocation.getLatitude());
                 intent.putExtra("lng",mLocation.getLongitude());
+                intent.putExtra("userId",MapsActivity.userId);
 
                 getActivity().finish();
                 startActivity(intent);

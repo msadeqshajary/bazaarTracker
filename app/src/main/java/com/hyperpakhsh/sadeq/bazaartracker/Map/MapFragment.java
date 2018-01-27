@@ -3,6 +3,7 @@ package com.hyperpakhsh.sadeq.bazaartracker.Map;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,10 +11,10 @@ import android.view.ViewGroup;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.GoogleMapOptions;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.hyperpakhsh.sadeq.bazaartracker.R;
@@ -43,11 +44,18 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
         args = getArguments();
         userId = MapsActivity.userId;
 
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        Log.e("USER IDDDD",userId+" ");
 
+        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+        GoogleMapOptions options = new GoogleMapOptions();
+        options.camera(CameraPosition.fromLatLngZoom(new LatLng(34.6357683,50.8754933),12));
+
+//        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager()
+//                .findFragmentById(R.id.map).new
+
+        SupportMapFragment mapFragment = SupportMapFragment.newInstance(options);
+
+        mapFragment.getMapAsync(this);
         /**
          * Toolbar layout handler
          */
@@ -59,7 +67,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        apiInterface.getLocations().enqueue(new Callback<ArrayList<LocationItem>>() {
+
+
+
+
+        apiInterface.getLocations(userId).enqueue(new Callback<ArrayList<LocationItem>>() {
             @Override
             public void onResponse(Call<ArrayList<LocationItem>> call, Response<ArrayList<LocationItem>> response) {
                 for (LocationItem item : response.body()){
@@ -70,8 +82,8 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                     MarkerOptions options = new MarkerOptions()
                             .position(latLng)
                             .title(item.getShop())
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_shop_approve));
-                    mMap.addMarker(new MarkerOptions().position(latLng).title(item.getShop()));
+                            .snippet(item.getLocation());
+                    mMap.addMarker(options);
                 }
 
                 if(args !=null &&args.getDouble("lat") != 0){
@@ -80,7 +92,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
                 }else{
                     CameraUpdate update = CameraUpdateFactory.newLatLngZoom(new LatLng(34.6432245,50.880412),14);
                     mMap.moveCamera(update);
-
                 }
             }
 

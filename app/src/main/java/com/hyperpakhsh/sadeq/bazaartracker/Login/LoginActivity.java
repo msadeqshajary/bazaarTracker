@@ -1,6 +1,7 @@
 package com.hyperpakhsh.sadeq.bazaartracker.Login;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -34,6 +35,17 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         /**
+         * Check if Logged In
+         */
+
+        final SharedPreferences sharedPreferences = getSharedPreferences("LOGIN",MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("login",false)){
+            Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
+            intent.putExtra("userId",sharedPreferences.getInt("userId",0));
+            startActivity(intent);
+        }
+
+        /**
          * Init views
          */
 
@@ -59,6 +71,7 @@ public class LoginActivity extends AppCompatActivity {
 
         final ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
 
+
         final Button submit = findViewById(R.id.login_submit);
         submit.setTypeface(sansMedium);
         submit.setOnClickListener(new View.OnClickListener() {
@@ -75,18 +88,16 @@ public class LoginActivity extends AppCompatActivity {
                         NameValueItem item = response.body().get(0);
                         Toast.makeText(getApplicationContext(),"خوش آمدید "+item.getName(),Toast.LENGTH_LONG).show();
 
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putBoolean("login",true);
+                        editor.putInt("userId",Integer.parseInt(item.getId()));
+                        editor.apply();
+
                         Intent intent = new Intent(LoginActivity.this, MapsActivity.class);
                         intent.putExtra("userId",Integer.parseInt(item.getId()));
                         startActivity(intent);
 
                         finish();
-
-                        userInput.setEnabled(true);
-                        passInput.setEnabled(true);
-                        submit.setEnabled(true);
-
-                        userInput.setText("");
-                        passInput.setText("");
                     }
 
                     @Override

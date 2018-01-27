@@ -2,7 +2,15 @@ package com.hyperpakhsh.sadeq.bazaartracker.Customers;
 
 public class CustomerItem {
     private String shop,name,phone,address,type;
-    private int grade,regionId,locationId;
+    private int grade,regionId,locationId,userId;
+
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public int getUserId() {
+        return userId;
+    }
 
     public String getShop() {
         return shop;

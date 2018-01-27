@@ -33,7 +33,10 @@ public interface ApiInterface {
     );
 
     @POST("address/getLocations")
-    Call<ArrayList<LocationItem>> getLocations();
+    @FormUrlEncoded
+    Call<ArrayList<LocationItem>> getLocations(
+            @Field("userId") int userId
+    );
 
     @POST("customers/login")
     @FormUrlEncoded

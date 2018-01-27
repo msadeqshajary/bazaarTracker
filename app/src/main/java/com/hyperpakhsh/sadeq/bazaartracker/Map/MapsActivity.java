@@ -27,6 +27,7 @@ public class MapsActivity extends FragmentActivity {
         setContentView(R.layout.activity_maps);
 
         userId = getIntent().getIntExtra("userId",0);
+        Log.e("USERID",userId+" ");
 
         ViewStub toolbarBelow = findViewById(R.id.main_stub);
         View toolbar = toolbarBelow.inflate();
@@ -56,6 +57,9 @@ public class MapsActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 MapFragment mapFragment = new MapFragment();
+                Bundle bundle = new Bundle();
+                bundle.putInt("userId",userId);
+                mapFragment.setArguments(bundle);
                 FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction()
                         .replace(R.id.maps_container,mapFragment,"map");
                 fragmentTransaction.commit();
