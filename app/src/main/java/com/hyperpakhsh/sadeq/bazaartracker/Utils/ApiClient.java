@@ -6,7 +6,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ApiClient {
-    private static final String BASE_URL = "http://ordibeheshtapp.ir/bazaarTracker/";
+    private static final String BASE_URL = "http://ordibeheshtapp.ir/taraznegar1/";
     private static Retrofit retrofit = null;
 
 

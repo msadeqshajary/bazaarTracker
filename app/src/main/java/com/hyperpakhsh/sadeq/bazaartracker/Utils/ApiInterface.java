@@ -2,7 +2,9 @@ package com.hyperpakhsh.sadeq.bazaartracker.Utils;
 
 
 
-import com.hyperpakhsh.sadeq.bazaartracker.Map.LocationItem;
+import com.hyperpakhsh.sadeq.bazaartracker.Customers.CustomerListItem;
+import com.hyperpakhsh.sadeq.bazaartracker.Login.InitItem;
+import com.hyperpakhsh.sadeq.bazaartracker.Order.ProductItem;
 
 import java.util.ArrayList;
 
@@ -13,30 +15,11 @@ import retrofit2.http.POST;
 
 public interface ApiInterface {
 
-    @POST("address/getRegions")
-    Call<ArrayList<NameValueItem>> getRegions(
+
+    @POST("customers/getCustomers")
+    Call<ArrayList<CustomerListItem>> getCustomers(
     );
 
-    @POST("customers/setCustomers")
-    @FormUrlEncoded
-    Call<String> setCustomer(
-      @Field("customer") String jsonCustomer
-    );
-
-
-    //first insert new customer location then return its id
-    @POST("address/getLocationId")
-    @FormUrlEncoded
-    Call<String> getLocationId(
-      @Field("latlong") String latlong,
-      @Field("address") String address
-    );
-
-    @POST("address/getLocations")
-    @FormUrlEncoded
-    Call<ArrayList<LocationItem>> getLocations(
-            @Field("userId") int userId
-    );
 
     @POST("customers/login")
     @FormUrlEncoded
@@ -44,5 +27,39 @@ public interface ApiInterface {
       @Field("username") String username,
       @Field("password") String password
     );
+
+
+    @POST("products/getProducts")
+    Call<ArrayList<ProductItem>> getProducts();
+
+    @POST("orders/addOrder")
+    @FormUrlEncoded
+    Call<String> addOrder(
+        @Field("order") String order
+    );
+
+    @POST("orders/addFactor")
+    @FormUrlEncoded
+    Call<String> addFactor(
+            @Field("factor") String factorJson
+    );
+
+    @POST("products/addProduct")
+    @FormUrlEncoded
+    Call<String> addProduct(
+            @Field("name") String productName,
+            @Field("price") int price
+    );
+
+    @POST("customers/getInitialValues")
+    Call<ArrayList<InitItem>> getInits();
+
+    @POST("customers/addCustomer")
+    @FormUrlEncoded
+    Call<String> addCustomer(
+            @Field("name") String customer,
+            @Field("phone") String phone
+    );
+
 
 }
