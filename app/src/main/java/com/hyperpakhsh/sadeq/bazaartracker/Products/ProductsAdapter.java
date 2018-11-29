@@ -52,12 +52,12 @@ class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder> {
     }
 
     @Override
-    public ProductsAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_product,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(ProductsAdapter.Holder holder, int position) {
+    public void onBindViewHolder(Holder holder, int position) {
         ProductItem item = items.get(position);
         holder.row.setText((position+1)+"");
         holder.title.setText(item.getName());

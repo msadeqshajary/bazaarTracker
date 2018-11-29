@@ -93,12 +93,12 @@ class FactorAdapter extends RecyclerView.Adapter<FactorAdapter.Holder> {
     }
 
     @Override
-    public FactorAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_factors,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(final FactorAdapter.Holder holder, int position) {
+    public void onBindViewHolder(final Holder holder, int position) {
         final FactorItem factor = items.get(position);
         String[] splittedDate = factor.getDate().split("-");
 
@@ -250,7 +250,7 @@ class FactorAdapter extends RecyclerView.Adapter<FactorAdapter.Holder> {
         PrintManager printManager = (PrintManager) context.getSystemService(Context.PRINT_SERVICE);
         PrintDocumentAdapter printDocumentAdapter;
 
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             printDocumentAdapter = webView.createPrintDocumentAdapter("PRINT SALE FACTOR");
         }
         else {

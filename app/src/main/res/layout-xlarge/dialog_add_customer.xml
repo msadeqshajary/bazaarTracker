@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorPrimaryLight"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:textColor="#fff"
+        android:id="@+id/dialog_add_customer_title"
+        android:text="ثبت مشتری جدید"
+        android:textSize="15sp"
+        android:background="@color/colorPrimary"
+        />
+
+    <LinearLayout
+        android:layout_width="620dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        >
+
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/dialog_add_customer_name"
+            android:padding="5dp"
+            android:textSize="13sp"
+            android:background="@drawable/bg_edittext"
+            android:textColor="@color/colorAccent"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_weight="1"
+            android:id="@+id/dialog_add_customer_name_tv"
+            android:text="نام مشتری :"
+            android:textColor="#fff"
+            android:gravity="right"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="620dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        >
+
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:id="@+id/dialog_add_customer_price"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textSize="13sp"
+            android:background="@drawable/bg_edittext"
+            android:textColor="@color/colorAccent"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:layout_weight="1"
+            android:textColor="#fff"
+            android:id="@+id/dialog_add_customer_price_tv"
+            android:text="شماره تماس :"
+            android:gravity="right"
+            />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:visibility="invisible"
+        android:id="@+id/dialog_add_customer_progress"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ثبت "
+        android:background="@color/colorAccent"
+        android:textColor="#fff"
+        android:layout_marginTop="15dp"
+        android:id="@+id/dialog_add_customer_submit"
+        />
+
+</LinearLayout>

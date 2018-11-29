@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:id="@+id/bottom_container"
+    android:background="@color/colorPrimary"
+    >
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_email_graph"
+        android:id="@+id/bottom_diagrams"
+        android:padding="20dp"
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_item_list"
+        android:id="@+id/bottom_orders"
+        android:padding="20dp"
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_groceries"
+        android:id="@+id/bottom_products"
+        android:padding="20dp"
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_customers"
+        android:id="@+id/bottom_customers"
+        android:padding="20dp"
+        />
+
+    <ImageView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:src="@drawable/ic_home"
+        android:id="@+id/bottom_home"
+        android:padding="20dp"
+        />
+
+</LinearLayout>

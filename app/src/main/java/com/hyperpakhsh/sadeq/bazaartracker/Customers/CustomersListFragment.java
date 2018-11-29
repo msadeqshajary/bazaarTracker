@@ -264,7 +264,7 @@ public class CustomersListFragment extends Fragment {
         PrintManager printManager = (PrintManager) getContext().getSystemService(Context.PRINT_SERVICE);
         PrintDocumentAdapter printDocumentAdapter;
 
-        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             printDocumentAdapter = webView.createPrintDocumentAdapter("PRINT SALE FACTOR");
         }
         else {

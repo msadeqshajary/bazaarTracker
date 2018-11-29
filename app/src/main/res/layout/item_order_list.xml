@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/item_order_container"
+        android:padding="3dp"
+        android:background="@color/lightGreen"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_order_total"
+            android:text="27850"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:textColor="#fff"
+            android:textSize="13sp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_order_price"
+            android:text="11750"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:textSize="13sp"
+            android:textColor="#fff"
+            android:layout_marginRight="25dp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_order_count"
+            android:text="4"
+            android:textSize="13sp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:layout_marginRight="15dp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:id="@+id/item_order_product"
+            android:text="دسر شکلاتی دنت"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:textColor="#fff"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_order_row"
+            android:text="1"
+            android:gravity="center"
+            android:textSize="13sp"
+            android:textColor="#fff"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

@@ -53,12 +53,12 @@ class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapter.Holde
     }
 
     @Override
-    public CustomerListAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_customers,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(CustomerListAdapter.Holder holder, int position) {
+    public void onBindViewHolder(Holder holder, int position) {
 
         holder.container.setBackgroundColor((position % 2 == 0)? Color.parseColor("#D4D4D4"): Color.parseColor("#EFEFEF"));
         final CustomerListItem item = items.get(position);

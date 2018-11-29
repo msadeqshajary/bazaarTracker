@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/item_order_container"
+        android:padding="4dp"
+        >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_order_total"
+            android:text="27850"
+            android:gravity="center"
+            android:layout_weight="2"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_order_price"
+            android:text="11750"
+            android:gravity="center"
+            android:layout_weight="2"
+            android:padding="2dp"
+            android:inputType="number"
+            android:textColor="@color/inputColor"
+            android:background="@drawable/bg_inside"
+            android:textSize="15sp"
+            android:layout_marginRight="5dp"
+            />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_order_count"
+            android:text="4"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="2dp"
+            android:inputType="number"
+            android:textColor="@color/inputColor"
+            android:background="@drawable/bg_inside"
+            android:textSize="15sp"
+            android:nextFocusForward="@+id/item_order_price"
+            android:nextFocusLeft="@+id/item_order_price"
+            android:nextFocusRight="@+id/item_order_price"
+            android:nextFocusDown="@+id/item_order_price"
+            android:layout_marginLeft="5dp"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:id="@+id/item_order_product"
+            android:text="دسر شکلاتی دنت"
+            android:gravity="right"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/item_order_row"
+            android:text="1"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_marginRight="5dp"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>

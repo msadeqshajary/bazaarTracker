@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    android:background="@color/normalTextColor"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:cardBackgroundColor="@color/lightGreen"
+            android:id="@+id/order_card"
+            android:visibility="gone"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/item_order_container"
+                >
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/order_list"
+                    />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="#fff"
+                    android:layout_marginTop="5dp"
+                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lightGreen"
+                    android:padding="3dp"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:id="@+id/order_final_total_price"
+                        android:text="جمع فاکتور "
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="13sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:id="@+id/order_final_total_price_title"
+                        android:text="جمع فاکتور "
+                        android:layout_weight="2"
+                        android:textSize="13sp"
+                        android:gravity="left"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lightGreen"
+                    android:padding="3dp"
+                    >
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:id="@+id/order_final_shipping"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:padding="10dp"
+                        android:background="@drawable/bg_order_diggest"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:inputType="number"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:id="@+id/order_final_total_shipping_title"
+                        android:text="هزینه حمل "
+                        android:layout_weight="2"
+                        android:textSize="13sp"
+                        android:gravity="left"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lightGreen"
+                    android:padding="3dp"
+                    >
+
+                    <EditText
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:id="@+id/order_final_total_discount"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:background="@drawable/bg_order_diggest"
+                        android:layout_marginRight="10dp"
+                        android:textSize="14sp"
+                        android:padding="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:inputType="number"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:id="@+id/order_final_total_discount_title"
+                        android:text="تخفیف "
+                        android:layout_weight="2"
+                        android:gravity="left"
+                        android:textSize="13sp"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content"
+                    android:background="@color/lightGreen"
+                    android:padding="5dp"
+
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:id="@+id/order_final_total"
+                        android:text="جمع فاکتور "
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="13sp"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="#fff"
+                        android:id="@+id/order_final_total_title"
+                        android:text="مبلغ قابل پرداخت "
+                        android:layout_weight="2"
+                        android:textSize="13sp"
+                        android:gravity="left"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/order_desc_title"
+            android:text="شرح فاکتور: "
+            android:gravity="right"
+            android:padding="5dp"
+            android:layout_below="@id/order_card"
+            android:layout_marginTop="10dp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:inputType="textMultiLine"
+            android:layout_below="@id/order_desc_title"
+            android:textSize="13sp"
+            android:padding="5dp"
+            android:layout_height="wrap_content"
+            android:lines="3"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/order_desc"
+            android:gravity="top|right"
+            android:background="@drawable/bg_edittext"
+            />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/order_progress"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            android:layout_below="@id/order_desc"
+            android:layout_centerHorizontal="true"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/order_submit"
+                android:background="@color/colorAccent"
+                android:text="چاپ و ارسال فاکتور"
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:id="@+id/order_submit_offline"
+                android:background="@color/colorPrimary"
+                android:text="چاپ و ثبت فاکتور"
+                android:textColor="#fff"
+                android:layout_margin="5dp"
+                />
+
+        </LinearLayout>
+
+
+
+
+    </RelativeLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_add_fab"
+        android:id="@+id/orders_add_fab"
+        app:elevation="4dp"
+        android:layout_gravity="bottom|left"
+        app:layout_anchorGravity="bottom|left"
+        app:rippleColor="@color/colorAccent"
+        app:backgroundTint="@color/colorAccent"
+        app:fabSize="auto"
+        />
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="56dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_shopping_basket"
+        android:id="@+id/orders_add_product_fab"
+        app:elevation="4dp"
+        android:layout_gravity="bottom|right"
+        app:layout_anchorGravity="bottom|right"
+        app:rippleColor="@color/colorPrimary"
+        app:backgroundTint="@color/colorPrimary"
+        app:fabSize="auto"
+        />
+
+
+
+
+</android.support.design.widget.CoordinatorLayout>
+

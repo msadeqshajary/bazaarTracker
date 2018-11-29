@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/normalTextColor"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp"
+        android:background="@color/hardGray"
+        >
+
+        <EditText
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:textSize="13sp"
+            android:drawablePadding="15dp"
+            android:background="@drawable/bg_edittext"
+            android:id="@+id/dialog_order_search"
+            android:gravity="right"
+            android:drawableLeft="@drawable/ic_magnifier"
+            android:layout_gravity="center"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:gravity="right|center_vertical"
+            android:textColor="@color/normalTextColor"
+            android:text="انتخاب برند"
+            android:id="@+id/dialog_order_title"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:id="@+id/product_container"
+        >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/product_price"
+            android:text="قیمت واحد"
+            android:lines="1"
+            android:gravity="center"
+            android:textColor="@color/delta"
+            android:selectAllOnFocus="true"
+            android:background="@drawable/bg_inside"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:enabled="true"
+            />
+
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/product_count"
+            android:gravity="center"
+            android:text="تعداد"
+            android:textColor="@color/delta"
+            android:background="@drawable/bg_inside"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="محصول"
+            android:id="@+id/product_product"
+            android:layout_weight="1"
+            android:textColor="@color/delta"
+            android:layout_marginRight="5dp"
+            />
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:id="@+id/dialog_add_product_list"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="ثبت محصولات"
+        android:textColor="#fff"
+        android:id="@+id/dialog_add_product_submit"
+        />
+</LinearLayout>

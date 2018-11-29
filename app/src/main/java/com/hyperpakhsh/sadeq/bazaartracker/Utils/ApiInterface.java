@@ -24,8 +24,8 @@ public interface ApiInterface {
     @POST("customers/login")
     @FormUrlEncoded
     Call<ArrayList<NameValueItem>> login(
-      @Field("username") String username,
-      @Field("password") String password
+            @Field("username") String username,
+            @Field("password") String password
     );
 
 
@@ -35,7 +35,7 @@ public interface ApiInterface {
     @POST("orders/addOrder")
     @FormUrlEncoded
     Call<String> addOrder(
-        @Field("order") String order
+            @Field("order") String order
     );
 
     @POST("orders/addFactor")

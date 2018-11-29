@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimaryLight"
+    android:fitsSystemWindows="true">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        >
+
+        <include layout="@layout/search_bar"/>
+        <LinearLayout
+            android:orientation="horizontal" android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:id="@+id/list_product_container"
+            android:background="#fff"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_product_delete"
+                android:src="@drawable/ic_delete"
+                android:layout_marginRight="5dp"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/list_product_edit"
+                android:src="@drawable/ic_edit"
+                android:layout_marginRight="10dp"
+                android:visibility="invisible"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:id="@+id/list_product_price"
+                android:text="قیمت"
+                android:lines="1"
+                android:textSize="13sp"
+                android:layout_weight="2"
+                android:gravity="center"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="محصول"
+                android:id="@+id/list_product_product"
+                android:layout_weight="4"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                android:textSize="13sp"
+                android:gravity="center_vertical|center_horizontal"
+                />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="ردیف"
+                android:id="@+id/list_product_row"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:textSize="13sp"
+                android:layout_marginRight="5dp"
+                />
+
+        </LinearLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:id="@+id/products_list"
+            />
+
+
+    </LinearLayout>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_add_fab"
+        android:id="@+id/products_add_fab"
+        app:elevation="4dp"
+        app:layout_anchorGravity="bottom|left"
+        android:layout_gravity="bottom|left"
+        app:rippleColor="@color/colorAccent"
+        app:backgroundTint="@color/colorAccent"
+        />
+
+
+</android.support.design.widget.CoordinatorLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:id="@+id/item_customers_container"
+    >
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_shop_cart"
+        android:layout_gravity="center"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/item_customers_add_order"
+        android:padding="3dp"
+        />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_cloud_computing"
+        android:layout_gravity="center"
+        android:layout_marginRight="12dp"
+        android:layout_marginLeft="15dp"
+        android:id="@+id/item_customers_windows"
+        android:visibility="invisible"
+        android:padding="3dp"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="6"
+        android:padding="4dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="15dp"
+        android:text="آقای رضوی"
+        android:id="@+id/item_customers_customer"
+        android:textColor="@color/hardGray"
+        android:gravity="center_vertical"
+        />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:text="15"
+        android:paddingBottom="2dp"
+        android:padding="4dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/item_customers_row"
+        android:textColor="@color/hardGray"
+        />
+
+
+
+</LinearLayout>

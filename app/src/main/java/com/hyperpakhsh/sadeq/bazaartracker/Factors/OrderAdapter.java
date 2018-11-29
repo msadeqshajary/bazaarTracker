@@ -58,12 +58,12 @@ class OrderAdapter extends RecyclerView.Adapter<OrderAdapter.Holder> {
         }
     }
     @Override
-    public OrderAdapter.Holder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public Holder onCreateViewHolder(ViewGroup parent, int viewType) {
         return new Holder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_order,parent,false));
     }
 
     @Override
-    public void onBindViewHolder(final OrderAdapter.Holder holder, int position) {
+    public void onBindViewHolder(final Holder holder, int position) {
         final OrderItem item = items.get(position);
 
         holder.total.setText(item.getTotal()+"");

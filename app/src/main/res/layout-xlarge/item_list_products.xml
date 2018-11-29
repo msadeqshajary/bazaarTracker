@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="620dp"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:id="@+id/list_product_container"
+    >
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_product_price"
+        android:text="25000"
+        android:layout_weight="1"
+        android:lines="1"
+        android:gravity="center"
+        android:textSize="13sp"
+        android:textColor="@color/colorAccent"
+        android:selectAllOnFocus="true"
+        android:inputType="number"
+        android:background="@drawable/bg_inside"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:enabled="true"
+        />
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/list_product_count"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textSize="13sp"
+        android:inputType="number"
+        android:textColor="@color/colorAccent"
+        android:background="@drawable/bg_inside"
+        />
+
+
+
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:text="محصول شماره 1"
+        android:id="@+id/list_product_product"
+        android:layout_weight="2"
+        android:textSize="13sp"
+        android:textColor="@color/delta"
+        android:layout_marginRight="5dp"
+        />
+
+</LinearLayout>
